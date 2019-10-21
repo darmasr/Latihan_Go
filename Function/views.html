@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Learning html/template Functions</title>
+    </head>
+    <body>
+        {{if eq .Name "Tony Stark"}}
+            <p>I'm the Iron Man!</p>
+        {{else if ne .Name "Natasya Romanoff"}}
+            <p>I'm neither Iron Man or Captain America</p>
+        {{end}}
+        <p>
+            {{.SayHello "New York citizen" "You are our Hero!"}}
+        </p>
+        <p>
+            {{printf "%s because I'm %s" "You know why?" "Iron Man"}}
+        </p>
+        <p>
+            Iron Man have many friends. {{len .Friends}} or them are :
+            {{index .Friends 0}},
+            {{index .Friends 1}}, and
+            {{index .Friends 2}}
+        </p>
+        {{$cond1 := true}}
+        {{$cond2 := false}}
+
+        {{if or $cond1 $cond2}}
+            <p>Be like Iron Man</p>
+        {{end}}
+    </body>
+</html>
